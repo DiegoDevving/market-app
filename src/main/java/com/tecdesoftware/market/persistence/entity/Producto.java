@@ -1,16 +1,14 @@
-package com.tecdesoftware.persistance.entity;
+package com.tecdesoftware.market.persistence.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.tecdesoftware.market.persistence.entity.Categoria;
+import jakarta.persistence.*;
 
 @Entity
 @Table (name = "productos")
 public class Producto {
     @Id //Llave primaria
     //Hace el id autoincremental
-    @GeneratedValue(strategy = GenerationTYpe.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_productos")
     private Integer idProducto;
 
@@ -22,13 +20,17 @@ public class Producto {
     @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @column(name = "precio_venta")
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @column(name = "cantidad_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name="id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
 
     public Integer getIdProducto() {
         return idProducto;

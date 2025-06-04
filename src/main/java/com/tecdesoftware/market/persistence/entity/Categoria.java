@@ -1,17 +1,22 @@
-package com.tecdesoftware.market.persistance.entity;
+package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
+import com.tecdesoftware.market.persistence.entity.Producto;
 
 @Entity
 @Table(name = "Categorias")
 public class Categoria {
     @Id
-    @GeneratedValue(strategy = )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id_categoria")
     private Integer idCategoria;
 
     private String descripcion;
     private Boolean estado;
+
+    @OneToOne(mappedBy = "categoria")
+    private List <Producto> productos;
 
     public Integer getIdCategoria() {
         return idCategoria;

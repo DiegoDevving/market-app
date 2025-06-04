@@ -1,11 +1,13 @@
-package com.tecdesoftware.market.persistance.entity;
+package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
+
 @Entity
 @Table(name="clientes")
 
 public class Cliente {
-    @Id //PK
+    @Id //Indica que es PK
     //Ejemplo que no lleva: @GeneratedValue
     private String id;
     private String nombre;
@@ -15,6 +17,9 @@ public class Cliente {
 
     @Column(name="correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 
     public String getId() {
         return id;
