@@ -1,13 +1,12 @@
+// Compra.java
 package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
-
 import java.util.List;
 
 @Entity
-@Table (name = "Compras")
+@Table(name = "Compras")
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +19,7 @@ public class Compra {
     @Column(name = "fecha")
     private LocalDateTime fecha;
 
-    @Column(name = "medio de pago")
+    @Column(name = "medio_pago")
     private String medioPago;
 
     @Column(name = "comentario")
@@ -29,14 +28,11 @@ public class Compra {
     @Column(name = "estado")
     private Boolean estado;
 
-    //Relacion con la entidad Cliente: Muchas compras a un cliente
     @ManyToOne
-    //No quiero que se modifique la entidad cliente, solo relacionarla.
-    @JoinColumn(name="id_cliente", insertable=false, updatable=false)
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    //Relacion con la entiadd compra producto, una compra compra a muchos prodcutos
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra")
     private List<CompraProducto> productos;
 
     public Integer getIdCompra() {
@@ -85,5 +81,21 @@ public class Compra {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
     }
 }
