@@ -1,16 +1,16 @@
 package com.tecdesoftware.market.domain;
 
 public class Category {
-    private int categoriaId;
+    private int categoryId;
     private String category;
     private boolean active;
 
-    public boolean isActive() {
-        return active;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategory() {
@@ -21,11 +21,11 @@ public class Category {
         this.category = category;
     }
 
-    public int getCategoriaId() {
-        return categoriaId;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setCategoriaId(int categoriaId) {
-        this.categoriaId = categoriaId;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
