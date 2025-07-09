@@ -1,0 +1,11 @@
+[33m842dc91[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to HEAD~2
+[33mcd1dca9[m HEAD@{1}: commit: feat: initial product API with controller, service, and repository
+[33meff752b[m HEAD@{2}: commit: feat: initial product API with controller, service, and repository
+[33m842dc91[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{3}: commit: MapStruct Implemented
+[33mc5d7ab2[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{4}: commit: ProductoRepository.java added
+[33mfd33c40[m HEAD@{5}: commit: All entities created
+[33m234e3b8[m HEAD@{6}: commit: Two simple entities added
+[33mecef0eb[m HEAD@{7}: commit: Configure PostgreSQL connection for dev environment
+[33m5f9c53f[m HEAD@{8}: commit: Adding pdn and dev profiles
+[33m8954bf7[m HEAD@{9}: commit: Adding HelloWorldController to test Spring
+[33m8f9a09b[m HEAD@{10}: commit (initial): First Commit
