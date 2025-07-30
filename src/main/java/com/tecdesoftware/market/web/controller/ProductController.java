@@ -21,7 +21,7 @@ import java.util.Optional;
 //Le dice a Spring que va a ser el controlador
 @RestController
 @RequestMapping("/products")
-@Tag(name = "Product Controler", description = "Manage products in the store")
+@Tag(name = "Product Controller", description = "Manage products in the store")
 
 public class ProductController {
     @Autowired
@@ -89,7 +89,7 @@ public class ProductController {
                                      {
                                      "name": "Butter beer",
                                      "categoryId" : 2,
-                                     "price": "19,50",
+                                     "price": "19.50",
                                      "stock": 230,
                                      "active": true
                                      }
@@ -117,6 +117,7 @@ public class ProductController {
     @ApiResponse( responseCode = "403", description = "Forbidden")
     @ApiResponse ( responseCode = "404", description = "Product not found")
     @ApiResponse ( responseCode = "500", description = "Internal server error")
+
     public ResponseEntity delete(
             @Parameter(
                     description = "ID of the product to be deleted", example = "7", required = true

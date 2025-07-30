@@ -11,7 +11,7 @@ public class Cliente {
     private String id;
 
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private Long celular;
     private String direccion;
 
@@ -20,6 +20,8 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
+
+    private String contrasena;
 
     public String getId() {
         return id;
@@ -37,12 +39,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public Long getCelular() {
@@ -75,5 +77,13 @@ public class Cliente {
 
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 }
